@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ButtonProps } from './Button.types';
+import React from "react";
+import styled from "styled-components";
+import { ButtonProps } from "./Button.types";
 
 // styled-components  style
 const StyledButton = styled.button`
@@ -16,11 +16,20 @@ const StyledButton = styled.button`
 `;
 
 // Button rending by StyledButton
-const Button: React.FC<ButtonProps> = ({ text, backgroundColor, onClick, disabled }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  backgroundColor,
+  onClick,
+  disabled,
+}) => {
   // Apply styles conditionally based on the disabled prop
   const style = {
-    backgroundColor: disabled ? 'grey' : backgroundColor ? backgroundColor:'green', // Greyed out if disabled
-    cursor: disabled ? 'not-allowed' : 'pointer' // Cursor indicates if the button is clickable
+    backgroundColor: disabled
+      ? "grey"
+      : backgroundColor
+      ? backgroundColor
+      : "green", // Greyed out if disabled
+    cursor: disabled ? "not-allowed" : "pointer", // Cursor indicates if the button is clickable
   };
   // const style = backgroundColor ? { backgroundColor } : {};
 

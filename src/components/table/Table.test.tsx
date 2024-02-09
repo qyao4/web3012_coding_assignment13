@@ -1,14 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { Table } from './Table';
-import { TableHeader } from './TableHeader';
-import { TableRow } from './TableRow';
-import { TableCell } from './TableCell';
-import { TableFooter } from './TableFooter';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { Table } from "./Table";
+import { TableHeader } from "./TableHeader";
+import { TableRow } from "./TableRow";
+import { TableCell } from "./TableCell";
+import { TableFooter } from "./TableFooter";
 
-describe('Table', () => {
-  it('is visible', () => {
+describe("Table", () => {
+  it("is visible", () => {
     render(
       <Table>
         <TableHeader>
@@ -29,12 +29,12 @@ describe('Table', () => {
       </Table>
     );
 
-    expect(screen.getByText('Header')).toBeVisible();
+    expect(screen.getByText("Header")).toBeVisible();
   });
 
-  it('has changed background color when disabled', () => {
-    const backgroundColor = '#f0f0f0';
-    const disabledBackgroundColor = '#eee';
+  it("has changed background color when disabled", () => {
+    const backgroundColor = "#f0f0f0";
+    const disabledBackgroundColor = "#eee";
 
     const { rerender } = render(
       <Table backgroundColor={backgroundColor}>
@@ -56,7 +56,9 @@ describe('Table', () => {
       </Table>
     );
 
-    expect(screen.getByText('Header').closest('table')).toHaveStyle(`background-color: ${backgroundColor}`);
+    const table = screen.getByTestId("table");
+    // expect(screen.getByText("Header").closest("table")).toHaveStyle(
+    expect(table).toHaveStyle(`background-color: ${backgroundColor}`);
 
     rerender(
       <Table backgroundColor={disabledBackgroundColor} disabled>
@@ -78,6 +80,7 @@ describe('Table', () => {
       </Table>
     );
 
-    expect(screen.getByText('Header').closest('table')).toHaveStyle(`background-color: ${disabledBackgroundColor}`);
+    // expect(screen.getByText("Header").closest("table")).toHaveStyle(
+    expect(table).toHaveStyle(`background-color: ${disabledBackgroundColor}`);
   });
 });

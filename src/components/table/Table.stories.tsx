@@ -1,16 +1,16 @@
 // src/components/table/Table.stories.tsx
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { Table, TableHeader, TableRow, TableCell, TableFooter } from './index'; // 确保正确导入组件
-import { TableProps } from './Table.types';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { Table, TableHeader, TableRow, TableCell, TableFooter } from "./index"; // 确保正确导入组件
+import { TableProps } from "./Table.types";
 
 export default {
-  title: 'Components/Table',
+  title: "Components/Table",
   component: Table,
   subcomponents: { TableHeader, TableRow, TableCell, TableFooter },
   argTypes: {
-    backgroundColor: { control: 'color' },
-    disabled: { control: 'boolean' },
+    backgroundColor: { control: "color" },
+    disabled: { control: "boolean" },
   },
 } as Meta;
 
@@ -39,12 +39,12 @@ const Template: Story<TableProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  backgroundColor: 'skyblue',
+  backgroundColor: "skyblue",
   disabled: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  backgroundColor: '#f0f0f0',
+  backgroundColor: "#f0f0f0",
   disabled: true,
 };

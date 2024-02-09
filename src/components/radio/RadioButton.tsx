@@ -1,14 +1,16 @@
 // src/components/radio-button/RadioButton.tsx
-import React from 'react';
-import styled from 'styled-components';
-import { RadioButtonProps } from './RadioButton.types';
+import React from "react";
+import styled from "styled-components";
+import { RadioButtonProps } from "./RadioButton.types";
 
-const StyledRadioButton = styled.label<Pick<RadioButtonProps, 'disabled' | 'backgroundColor'>>`
+const StyledRadioButton = styled.label<
+  Pick<RadioButtonProps, "disabled" | "backgroundColor">
+>`
   padding: 0.5em 1em;
   margin: 0.5em;
-  background-color: ${(props) => props.backgroundColor || 'transparent'};
+  background-color: ${(props) => props.backgroundColor || "transparent"};
   border-radius: 4px;
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   input {
@@ -20,9 +22,18 @@ const StyledRadioButton = styled.label<Pick<RadioButtonProps, 'disabled' | 'back
   }
 `;
 
-const RadioButton: React.FC<RadioButtonProps> = ({ label, name, disabled, backgroundColor }) => {
+const RadioButton: React.FC<RadioButtonProps> = ({
+  label,
+  name,
+  disabled,
+  backgroundColor,
+}) => {
   return (
-    <StyledRadioButton disabled={disabled} backgroundColor={backgroundColor}>
+    <StyledRadioButton
+      data-testid="radio"
+      disabled={disabled}
+      backgroundColor={backgroundColor}
+    >
       <input type="radio" name={name} disabled={disabled} />
       {label}
     </StyledRadioButton>
