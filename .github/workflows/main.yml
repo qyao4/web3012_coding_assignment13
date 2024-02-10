@@ -18,9 +18,9 @@ jobs:
         node-version: '14'
     - name: Install Dependencies
       run: npm install
+    - name: Run Formatter Check
+      run: npm run format
     - name: Run Linter
       run: npm run lint
-    - name: Run Formatter Check
-      run: npm run format:check
     - name: Run Tests
-      run: npm test:no-watch
+      run: npm run test:no-watch
