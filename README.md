@@ -11,13 +11,13 @@ Before you begin, ensure you have Docker Desktop installed on your system.
 Clone the GitHub repository:
 
 ```
-git clone https://github.com/qyao4/web3012_coding_assignment12
+git clone https://github.com/qyao4/web3012_coding_assignment13.git
 ```
 
 Navigate to the repository directory:
 
 ```
-cd web3012_coding_assignment12
+cd web3012_coding_assignment13
 ```
 
 ## Running the Application with Docker
@@ -25,10 +25,10 @@ cd web3012_coding_assignment12
 To launch the app, run the following command in your terminal:
 
 ```
-docker run --name yao_qiang_coding_assignment12 -d -p 8083:6006 yao_qiang_storybook:1.0.0
+docker run --name yao_qiang_coding_assignment12 -d -p 8083:6006 qyao4/yao_qiang_uicomponent:1.0.0
 ```
 
-The application will be accessible at `http://localhost:8083`.
+The application will be accessible at `http://localhost:8018`.
 
 ## Features
 
