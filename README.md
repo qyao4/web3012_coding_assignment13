@@ -25,7 +25,7 @@ cd web3012_coding_assignment13
 To launch the app, run the following command in your terminal:
 
 ```
-docker run --name yao_qiang_coding_assignment12 -d -p 8083:6006 qyao4/yao_qiang_uicomponent:1.0.0
+docker run --name yao_qiang_coding_assignment13 -d -p 8018:6006 qyao4/yao_qiang_uicomponent:1.0.0
 ```
 
 The application will be accessible at `http://localhost:8018`.
